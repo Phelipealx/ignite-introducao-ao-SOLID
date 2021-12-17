@@ -10,7 +10,7 @@ class ShowUserProfileController {
       const callBack = this.showUserProfileUseCase.execute({ user_id: request.params.user_id })
       return response.json(callBack);
     } catch (error) {
-      return response.status(404).json({ error })
+      return response.status(404).json({ error: error.message })
     }
   }
 }

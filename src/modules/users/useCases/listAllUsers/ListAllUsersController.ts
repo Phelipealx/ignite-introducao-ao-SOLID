@@ -10,7 +10,7 @@ class ListAllUsersController {
       const callBack = this.listAllUsersUseCase.execute({ user_id: request.headers['user_id'] as string });
       return response.json(callBack);
     } catch (error) {
-      response.status(400).json({ error });
+      response.status(400).json({ error: error.message });
     }
   }
 }

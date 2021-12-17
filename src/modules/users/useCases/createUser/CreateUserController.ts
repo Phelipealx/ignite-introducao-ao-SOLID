@@ -10,7 +10,7 @@ class CreateUserController {
       const callBack = this.createUserUseCase.execute(request.body);
       return response.status(201).json(callBack);
     } catch (error) {
-      return response.status(400).json({ error });
+      return response.status(400).json({ error: error.message });
     }
   }
 }
